@@ -1,0 +1,22 @@
+{
+  "name": "sass-livereload",
+  "version": "1.0.0",
+  "description": "sass-livereload",
+  "main": "index.js",
+  "scripts": {
+    "start": "static-livereload --path ./ | sass --watch .:./css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ostapgv/sass-livereload.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ostapgv/sass-livereload/issues"
+  },
+  "homepage": "https://github.com/ostapgv/sass-livereload#readme",
+  "dependencies": {
+    "static-livereload": "^0.1.4"
+  }
+}
