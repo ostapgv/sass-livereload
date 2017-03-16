@@ -18,11 +18,9 @@ body a:hover {
   text-align: center;
 }
 
-
 .social, .account, .left-aside, .right-aside {
   text-align: left;
 }
-
 
 header {
   width: 100%;
@@ -59,7 +57,7 @@ header {
   position: fixed;
   z-index: 2;
   height: 32px;
-  width: 32px; 
+  width: 32px;
   background-image: url(https://www.opp.ca/templates/images/icons/hamburger-k.svg);
 }
 
@@ -68,7 +66,7 @@ header {
   pointer-events: none;
 }
 
-.burger:focus+.main-nav {
+.burger:focus + .main-nav {
   /*  opacity is 1 in opened state (see below) */
   opacity: 1;
   visibility: visible;
@@ -91,18 +89,18 @@ header {
   transition: visibility 0.5s;
 }
 
-.burger:focus+.main-nav ul {
+.burger:focus + .main-nav ul {
   list-style: none;
-  padding: 0px;
+  padding: 0;
   margin: 0;
 }
 
-.burger:focus+.main-nav ul li {
+.burger:focus + .main-nav ul li {
   border-bottom: 1px solid dimgrey;
 }
 
 .left-menu-mobile {
-  margin: 30px 0px;
+  margin: 30px 0;
 }
 
 footer {
@@ -115,9 +113,8 @@ footer {
   color: white;
 }
 
-
-footer li{
-  padding: 0px 10px;
+footer li {
+  padding: 0 10px;
   border-right: 1px solid white;
 }
 
@@ -129,12 +126,12 @@ footer a:hover {
   color: #999;
 }
 
-.social  p {
-  font-style: italic; 
-  margin: 5px 0px;
+.social p {
+  font-style: italic;
+  margin: 5px 0;
 }
 
-.social  p:first-child {
+.social p:first-child {
   font-style: normal;
   text-transform: uppercase;
   margin-bottom: 50px;
@@ -147,33 +144,31 @@ footer a:hover {
   text-transform: uppercase;
 }
 
-.account  p {
-  font-style: italic; 
+.account p {
+  font-style: italic;
 }
+
 .account p:first-child {
   font-style: normal;
   text-transform: uppercase;
 }
 
-
 .left-aside {
   display: none;
 }
 
-.left-aside  ul, footer ul {
+.left-aside ul, footer ul {
   margin: 0;
-  padding:0;
+  padding: 0;
   list-style: none;
 }
 
-
-
-.left-aside  ul li {
-  padding: 10px 0px;
+.left-aside ul li {
+  padding: 10px 0;
 }
 
 .breadcrumb li {
-  padding:0;
+  padding: 0;
   display: inline-block;
   margin-bottom: 20px;
   font-size: 0.7em;
@@ -227,48 +222,46 @@ footer a:hover {
   font-size: 0.8em;
 }
 
-
 main {
   position: relative;
   margin-top: 120px;
 }
 
-
 @media screen and (min-width: 600px) {
-  
+
   .wrapper {
     margin: 0 30px;
   }
-  
+
   header {
     position: static;
     width: auto;
     max-height: 100%;
   }
-  
+
   .social, .account, .left-aside, .right-aside {
-    flex: 1 0px; 
+    flex: 1 0;
   }
-  
+
   .header-title, .main {
-    flex: 2 0px;
+    flex: 2 0;
   }
-  
+
   .social, .account {
     display: block;
   }
-  
+
   main {
     position: static;
   }
-  
+
   nav {
     width: auto;
     height: auto;
     position: static;
     background-image: none;
   }
-  
+
   .burger {
     display: none;
   }
@@ -291,24 +284,24 @@ main {
     border-bottom: 1px solid dimgrey;
     border-top: 1px solid dimgrey;
   }
-  
+
   .main-nav ul {
     margin: 0;
-    padding:0;
+    padding: 0;
     list-style: none;
   }
-  
-  .main-nav ul  {
-    font-style: italic; 
-    margin:  0px;
+
+  .main-nav ul {
+    font-style: italic;
+    margin: 0;
   }
-  
-  .main-nav ul li, .burger:focus+.main-nav ul li {
+
+  .main-nav ul li, .burger:focus + .main-nav ul li {
     display: inline-block;
     border: none;
   }
-  
-  .main-nav ul:first-child, .burger:focus+.main-nav ul:first-child {
+
+  .main-nav ul:first-child, .burger:focus + .main-nav ul:first-child {
     font-style: normal;
     text-transform: uppercase;
     border-bottom: 1px solid lightgray;
@@ -317,12 +310,12 @@ main {
     color: #333;
   }
 
-  .main-nav ul:last-child, .burger:focus+.main-nav ul:last-child {
-    padding: 3px 0px;
+  .main-nav ul:last-child, .burger:focus + .main-nav ul:last-child {
+    padding: 3px 0;
   }
 
   .main-nav ul a, span {
-    margin: 0px 20px;
+    margin: 0 20px;
   }
 
   .main-nav ul a:hover {
@@ -345,23 +338,23 @@ main {
     position: absolute;
     display: inline-block;
     content: '';
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-top: 15px solid white;
     border-bottom: 15px solid white;
     border-left: 15px solid gray;
     margin-left: 5px;
     margin-top: -5px;
   }
-  
+
   .left-aside {
     display: block;
   }
-  
+
   .left-menu-mobile {
-    display:none;
+    display: none;
   }
-  
+
   footer {
     padding: 60px 10px 20px 10px;
   }
