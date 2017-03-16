@@ -1,3 +1,373 @@
-p {
-	color: green;
+body {
+  font-family: 'Catamaran', "Open Sans", sans-serif;
+  color: gray;
+  margin: 0 5px;
+}
+
+body a:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.header-title, .social, .account, .main, nav, .left-aside, .left-menu-mobile, .right-aside, footer {
+  flex: 1 100%;
+  text-align: center;
+}
+
+
+.social, .account, .left-aside, .right-aside {
+  text-align: left;
+}
+
+
+header {
+  width: 100%;
+  position: fixed;
+  font-size: 0.8em;
+  z-index: 1;
+  background-color: white;
+  //right: 0;
+  max-height: 200px;
+}
+
+.social a:hover, .account a:hover {
+  text-decoration: underline;
+}
+
+.social p:last-child a, .account p:last-child a {
+  text-decoration: underline;
+}
+
+.social p:nth-child(2), .social p:last-child, .account p:last-child, .main-nav ul:last-child {
+  font-family: 'Dosis', sans-serif;
+}
+
+.account {
+  display: none;
+  text-align: right;
+}
+
+.social {
+  display: none;
+}
+
+.burger {
+  position: fixed;
+  z-index: 2;
+  height: 32px;
+  width: 32px; 
+  background-image: url(https://www.opp.ca/templates/images/icons/hamburger-k.svg);
+}
+
+.burger:focus {
+  /* clicking on label should toggle the menu */
+  pointer-events: none;
+}
+
+.burger:focus+.main-nav {
+  /*  opacity is 1 in opened state (see below) */
+  opacity: 1;
+  visibility: visible;
+
+  /* don't let pointer-events affect descendant elements */
+  pointer-events: auto;
+  background-color: white;
+  width: 80%;
+  border: 1px solid grey;
+}
+
+.main-nav {
+  position: absolute;
+  top: 32px;
+  z-index: 1;
+
+  /* use opacity to fake immediate toggle */
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.5s;
+}
+
+.burger:focus+.main-nav ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.burger:focus+.main-nav ul li {
+  border-bottom: 1px solid dimgrey;
+}
+
+.left-menu-mobile {
+  margin: 30px 0px;
+}
+
+footer {
+  position: relative;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #333;
+  text-transform: uppercase;
+  font-size: 0.5em;
+  color: white;
+}
+
+
+footer li{
+  padding: 0px 10px;
+  border-right: 1px solid white;
+}
+
+footer li:last-child {
+  border: none;
+}
+
+footer a:hover {
+  color: #999;
+}
+
+.social  p {
+  font-style: italic; 
+  margin: 5px 0px;
+}
+
+.social  p:first-child {
+  font-style: normal;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.header-title {
+  font-size: 2em;
+  font-family: 'Source Serif Pro', serif;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.account  p {
+  font-style: italic; 
+}
+.account p:first-child {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+
+.left-aside {
+  display: none;
+}
+
+.left-aside  ul, footer ul {
+  margin: 0;
+  padding:0;
+  list-style: none;
+}
+
+
+
+.left-aside  ul li {
+  padding: 10px 0px;
+}
+
+.breadcrumb li {
+  padding:0;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.7em;
+}
+
+.breadcrumb li:first-child:before {
+  content: none;
+}
+
+.breadcrumb li:before {
+  content: " / ";
+}
+
+.breadcrumb a:hover {
+  color: #5160a6;
+}
+
+.left-aside h3 {
+  font-family: 'Source Serif Pro', serif;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.city-guides li:after {
+  content: " > ";
+}
+
+.viewAll, .left-aside a:hover, .right-aside a:hover {
+  color: #5160a6;
+  border-color: #5160a6;
+}
+
+.right-aside article {
+  margin-top: 30px;
+  border: 1px solid lightgray;
+  text-align: center;
+  color: #333;
+}
+
+.right-aside article h2 {
+  font-size: 1.7em;
+  font-family: 'Source Serif Pro', serif;
+}
+
+.right-aside article > a {
+  display: inline-block;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+
+main {
+  position: relative;
+  margin-top: 120px;
+}
+
+
+@media screen and (min-width: 600px) {
+  
+  .wrapper {
+    margin: 0 30px;
+  }
+  
+  header {
+    position: static;
+    width: auto;
+    max-height: 100%;
+  }
+  
+  .social, .account, .left-aside, .right-aside {
+    flex: 1 0px; 
+  }
+  
+  .header-title, .main {
+    flex: 2 0px;
+  }
+  
+  .social, .account {
+    display: block;
+  }
+  
+  main {
+    position: static;
+  }
+  
+  nav {
+    width: auto;
+    height: auto;
+    position: static;
+    background-image: none;
+  }
+  
+  .burger {
+    display: none;
+  }
+
+  .burger:focus {
+    pointer-events: auto;
+  }
+
+  .main-nav {
+    position: static;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .main-nav {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-bottom: 1px solid dimgrey;
+    border-top: 1px solid dimgrey;
+  }
+  
+  .main-nav ul {
+    margin: 0;
+    padding:0;
+    list-style: none;
+  }
+  
+  .main-nav ul  {
+    font-style: italic; 
+    margin:  0px;
+  }
+  
+  .main-nav ul li, .burger:focus+.main-nav ul li {
+    display: inline-block;
+    border: none;
+  }
+  
+  .main-nav ul:first-child, .burger:focus+.main-nav ul:first-child {
+    font-style: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    font-family: 'Source Serif Pro', serif;
+    color: #333;
+  }
+
+  .main-nav ul:last-child, .burger:focus+.main-nav ul:last-child {
+    padding: 3px 0px;
+  }
+
+  .main-nav ul a, span {
+    margin: 0px 20px;
+  }
+
+  .main-nav ul a:hover {
+    text-decoration: underline;
+  }
+
+  .main-nav ul span {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-style: normal;
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    font-family: 'Catamaran', "Open Sans", sans-serif;
+    font-size: 0.7em;
+  }
+
+  .main-nav ul span:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 15px solid white;
+    border-bottom: 15px solid white;
+    border-left: 15px solid gray;
+    margin-left: 5px;
+    margin-top: -5px;
+  }
+  
+  .left-aside {
+    display: block;
+  }
+  
+  .left-menu-mobile {
+    display:none;
+  }
+  
+  footer {
+    padding: 60px 10px 20px 10px;
+  }
+
+  footer ul li {
+    display: inline-block;
+  }
+
 }
